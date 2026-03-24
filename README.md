@@ -11,8 +11,8 @@ Claude Skills 是 Claude Code 中的可复用任务模板，通过 `/skill-name`
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/yourusername/skills.git
-cd skills
+git clone https://github.com/yourusername/cc-skills.git
+cd cc-skills
 ```
 
 ### 2. 复制 Skills 到 Claude 配置目录
@@ -36,7 +36,7 @@ cp -r skills/* ~/.claude/skills/
 ## 目录结构
 
 ```
-skills/
+cc-skills/
 ├── README.md                 # 本文件
 ├── template/                 # Skill 模板
 │   └── skill-template.md     # 基础模板
