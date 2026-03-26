@@ -1,3 +1,8 @@
+---
+name: git-commit-helper
+description: Intelligent Git commit assistant that analyzes staged changes and generates conventional commit messages following best practices.
+---
+
 # Skill: git-commit-helper
 
 ## Description

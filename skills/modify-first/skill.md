@@ -1,3 +1,8 @@
+---
+name: modify-first
+description: Prevent Claude from creating duplicate files. Always check if files exist before writing, and update existing files instead of creating new ones. Critical for avoiding file clutter.
+---
+
 # Skill: modify-first
 
 ## Description

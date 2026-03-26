@@ -1,3 +1,8 @@
+---
+name: readme-generator
+description: Intelligent README.md generator that analyzes project structure and code to automatically generate comprehensive project documentation with installation, usage, and contribution guidelines.
+---
+
 # Skill: readme-generator
 
 ## Description

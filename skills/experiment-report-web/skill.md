@@ -1,3 +1,8 @@
+---
+name: experiment-report-web
+description: Generate experiment report web pages with design, objectives, results, data analysis, and visualization. Automatically creates dated folders, maintains an index page, and deploys to Vercel.
+---
+
 # Skill: experiment-report-web
 
 ## Description
