@@ -86,6 +86,46 @@ cp -r template/skill-template skills/my-new-skill
 4. **Instructions**：详细的执行指令
 5. **Examples**（可选）：使用示例
 
+## 可用 Skills
+
+### experiment-report-web
+生成实验结果汇报网页项目，自动部署到 Vercel（支持私有仓库）。包含实验设计、目的、结果、数据、分析等完整模块。
+
+**触发词**：`/experiment-report-web`
+
+**功能**：
+- 📊 完整的实验信息展示（设计、目的、结果、分析）
+- 📈 数据可视化（Chart.js 交互图表）
+- 🎨 现代化 UI（纯 HTML + CSS，零依赖）
+- 🚀 自动部署到 Vercel（免费，支持私有仓库）
+- 🔒 私有仓库友好（数据不必公开）
+- 📱 响应式设计（支持所有设备）
+- 🇨🇳 全中文界面
+
+**快速开始**：
+```bash
+/experiment-report-web
+# 回答：实验标题 + 英文 slug
+# 自动创建 docs/2026-03-26-your-experiment/
+# 自动更新索引页 docs/index.html
+# 自动部署到 Vercel，获得 URL
+```
+
+**特点**：
+- 每次实验创建独立的日期文件夹（如 `2026-03-26-deep-learning/`）
+- 自动维护索引页，列出所有实验
+- URL 使用英文 slug，更友好
+- 支持管理多个实验报告
+
+### git-commit-helper
+智能 Git 提交助手。
+
+### readme-generator
+智能 README.md 生成器。
+
+### modify-first
+代码修改优先策略。
+
 ## 示例 Skills
 
 查看 `skills/example-skill/` 目录获取完整示例。
