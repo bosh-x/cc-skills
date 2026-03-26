@@ -38,11 +38,19 @@ cp -r skills/* ~/.claude/skills/
 ```
 cc-skills/
 ├── README.md                 # 本文件
+├── docs/                     # 文档目录
+│   └── skill-writing-guide.md # Skill 编写完整指南
 ├── template/                 # Skill 模板
 │   └── skill-template.md     # 基础模板
 └── skills/                   # 自定义 Skills 目录
-    └── example-skill/        # 示例 skill
-        └── skill.md          # Skill 定义文件
+    ├── experiment-report-web/
+    │   └── SKILL.md          # 实验报告网页生成器
+    ├── git-commit-helper/
+    │   └── SKILL.md          # Git 提交助手
+    ├── modify-first/
+    │   └── SKILL.md          # 防止重复文件
+    └── readme-generator/
+        └── SKILL.md          # README 生成器
 ```
 
 ## 创建新 Skill
@@ -60,31 +68,38 @@ cp -r template/skill-template skills/my-new-skill
 
 ### 方法二：手动创建
 
-创建一个新的 Markdown 文件 `skills/my-skill/skill.md`，包含以下基本结构：
+创建一个新的 Markdown 文件 `skills/my-skill/SKILL.md`（注意文件名必须是大写的 `SKILL.md`），包含以下基本结构：
 
-```markdown
+```yaml
+---
+name: my-skill
+description: Brief description of what this skill does
+---
+
 # Skill: my-skill
 
-## Description
-简短描述这个 skill 的功能
-
-## Trigger Conditions
-- 关键词 1
-- 关键词 2
-
 ## Instructions
-详细的执行步骤和逻辑
+
+详细的执行步骤和逻辑...
 ```
 
 ## Skill 文件格式
 
+⚠️ **重要**：Skill 文件必须命名为 `SKILL.md`（大写）。
+
 一个标准的 skill 文件应包含：
 
-1. **标题**：清晰的 skill 名称
-2. **Description**：功能描述
-3. **Trigger Conditions**（可选）：触发条件，帮助 Claude 判断何时使用
-4. **Instructions**：详细的执行指令
-5. **Examples**（可选）：使用示例
+1. **YAML Frontmatter**（必需）：
+   - `name`: Skill 名称
+   - `description`: 功能描述（帮助 Claude 判断何时使用）
+   - 其他可选字段：`disable-model-invocation`, `allowed-tools`, `context` 等
+
+2. **Markdown 内容**：
+   - 详细的执行指令
+   - 使用示例（可选）
+   - 参数说明（可选）
+
+详细说明请参考 [Skill 编写指南](docs/skill-writing-guide.md)。
 
 ## 可用 Skills
 
@@ -138,13 +153,27 @@ cp -r template/skill-template skills/my-new-skill
 4. **文档完整**：提供清晰的说明和示例
 5. **版本控制**：使用 git 管理 skill 的版本
 
+## 📚 文档
+
+- **[Skill 编写指南](docs/skill-writing-guide.md)** - 基于 Claude Code 官方文档的完整 Skill 编写指南
+  - YAML Frontmatter 完整参考
+  - 高级功能和模式
+  - 最佳实践和故障排除
+  - 包含大量实用示例
+
 ## 更新 Skills
 
 修改 skill 后，重新复制到 Claude 配置目录：
 
 ```bash
-cp skills/your-skill-name/skill.md ~/.claude/skills/your-skill-name.md
+# 复制单个 skill（目录方式）
+cp -r skills/your-skill-name ~/.claude/skills/
+
+# 或复制所有 skills
+cp -r skills/* ~/.claude/skills/
 ```
+
+**注意**：Claude 会自动检测 `~/.claude/skills/` 目录中的更改，但建议重启 Claude Code 会话以确保更新生效。
 
 ## 贡献
 
